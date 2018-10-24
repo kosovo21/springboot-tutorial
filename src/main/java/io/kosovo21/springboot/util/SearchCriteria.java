@@ -1,4 +1,4 @@
-package io.ozon.springboot.util;
+package io.kosovo21.springboot.util;
 
 /**
  * 

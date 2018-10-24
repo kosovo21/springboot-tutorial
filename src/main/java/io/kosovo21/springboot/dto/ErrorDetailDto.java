@@ -1,4 +1,4 @@
-package io.ozon.springboot.dto;
+package io.kosovo21.springboot.dto;
 
 import java.util.Date;
 

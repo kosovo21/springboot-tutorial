@@ -1,4 +1,4 @@
-package io.ozon.springboot.controller;
+package io.kosovo21.springboot.controller;
 
 import java.util.Date;
 
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import io.ozon.springboot.dto.ErrorDetailDto;
+import io.kosovo21.springboot.dto.ErrorDetailDto;
 
 @ControllerAdvice
 @RestController

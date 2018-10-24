@@ -1,4 +1,4 @@
-package io.ozon.springboot;
+package io.kosovo21.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package io.ozon.springboot.service;
+package io.kosovo21.springboot.service;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -20,12 +20,12 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import io.ozon.springboot.dao.ClassDao;
-import io.ozon.springboot.dao.StudentDao;
-import io.ozon.springboot.dto.StudentDto;
-import io.ozon.springboot.entity.ClassEntity;
-import io.ozon.springboot.entity.StudentEntity;
-import io.ozon.springboot.util.SearchCriteria;
+import io.kosovo21.springboot.dao.ClassDao;
+import io.kosovo21.springboot.dao.StudentDao;
+import io.kosovo21.springboot.dto.StudentDto;
+import io.kosovo21.springboot.entity.ClassEntity;
+import io.kosovo21.springboot.entity.StudentEntity;
+import io.kosovo21.springboot.util.SearchCriteria;
 
 @Service
 public class SchoolService {

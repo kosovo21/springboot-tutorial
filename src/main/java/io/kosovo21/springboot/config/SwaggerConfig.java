@@ -1,4 +1,4 @@
-package io.ozon.springboot.config;
+package io.kosovo21.springboot.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package io.ozon.springboot.entity;
+package io.kosovo21.springboot.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

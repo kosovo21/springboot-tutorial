@@ -1,8 +1,8 @@
-package io.ozon.springboot.dao;
+package io.kosovo21.springboot.dao;
 
 import org.springframework.data.repository.CrudRepository;
 
-import io.ozon.springboot.entity.StudentEntity;
+import io.kosovo21.springboot.entity.StudentEntity;
 
 public interface StudentDao extends CrudRepository<StudentEntity, Long>{
 
