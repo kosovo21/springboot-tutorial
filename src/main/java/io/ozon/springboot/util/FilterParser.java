@@ -5,6 +5,13 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 
+ * Parse string search from input to object
+ * 
+ * @author muhammad.ozon
+ *
+ */
 public class FilterParser {
 
 	public static List<SearchCriteria> paramParse(String search) {

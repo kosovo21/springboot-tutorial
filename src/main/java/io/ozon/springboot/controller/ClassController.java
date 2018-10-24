@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.ozon.springboot.entity.ClassEntity;
 import io.ozon.springboot.service.SchoolService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
+@Api(value = "Class API")
 @RestController
 @RequestMapping("/class")
 public class ClassController {
@@ -18,6 +21,7 @@ public class ClassController {
 	@Autowired
 	private SchoolService schoolService;
 
+	@ApiOperation(value = "Save Class")
 	@PostMapping
 	public ResponseEntity<?> save(@RequestBody ClassEntity clasz) {
 		schoolService.save(clasz);

@@ -1,5 +1,10 @@
 package io.ozon.springboot.util;
 
+/**
+ * 
+ * @author muhammad.ozon
+ *
+ */
 public class SearchCriteria {
 
     private String key;

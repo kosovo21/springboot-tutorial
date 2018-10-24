@@ -3,6 +3,8 @@ package io.ozon.springboot.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -20,16 +22,17 @@ import io.ozon.springboot.entity.StudentEntity;
 import io.ozon.springboot.service.SchoolService;
 import io.ozon.springboot.util.FilterParser;
 import io.ozon.springboot.util.SearchCriteria;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/student")
-public class StudentController {
+public class StudentController extends CustomizedResponseEntityExceptionHandler{
 
 	@Autowired
 	private SchoolService schoolService;
 
 	@PostMapping
-	public ResponseEntity<?> save(@RequestBody StudentEntity student) {
+	public ResponseEntity<?> save(@Valid @RequestBody StudentEntity student) {
 		schoolService.save(student);
 		return new ResponseEntity<>(student, HttpStatus.OK);
 	}
@@ -43,6 +46,7 @@ public class StudentController {
 		return new ResponseEntity<StudentEntity>(student.get(), HttpStatus.OK);
 	}
 
+	@ApiOperation(value = "Search Student", notes = "get page of student based on search criteria, example = currentClass_major:IPA")
 	@GetMapping("/filter")
 	public ResponseEntity<?> getOne(@RequestParam(required = true) String search,
 			@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "10") Integer size) {
