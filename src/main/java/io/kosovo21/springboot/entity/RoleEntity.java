@@ -1,23 +1,20 @@
 package io.kosovo21.springboot.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import io.kosovo21.springboot.enums.Major;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "class")
-public class ClassEntity extends BaseIdEntity {
+@Table(name = "role")
+public class RoleEntity extends BaseAuditEntity {
 
-	@NotNull
-	private Integer grade;
-
-	@NotNull
-	private Major major;
-
+	@Id
+	private String name;
+	
 }

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.kosovo21.springboot.controller.base.BaseResponseEntityExceptionHandler;
 import io.kosovo21.springboot.dto.StudentDto;
 import io.kosovo21.springboot.entity.StudentEntity;
 import io.kosovo21.springboot.service.SchoolService;
@@ -26,7 +27,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/student")
-public class StudentController extends CustomizedResponseEntityExceptionHandler{
+public class StudentController extends BaseResponseEntityExceptionHandler{
 
 	@Autowired
 	private SchoolService schoolService;

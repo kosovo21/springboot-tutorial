@@ -20,35 +20,35 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import io.kosovo21.springboot.dao.ClassDao;
-import io.kosovo21.springboot.dao.StudentDao;
 import io.kosovo21.springboot.dto.StudentDto;
 import io.kosovo21.springboot.entity.ClassEntity;
 import io.kosovo21.springboot.entity.StudentEntity;
+import io.kosovo21.springboot.repository.ClassRepository;
+import io.kosovo21.springboot.repository.StudentRepository;
 import io.kosovo21.springboot.util.SearchCriteria;
 
 @Service
 public class SchoolService {
 
 	@Autowired
-	private StudentDao studentDao;
+	private StudentRepository studentRepository;
 
 	@Autowired
-	private ClassDao classDao;
+	private ClassRepository classRepository;
 
 	@Autowired
 	private EntityManager entityManager;
 
 	public StudentEntity save(StudentEntity student) {
-		return studentDao.save(student);
+		return studentRepository.save(student);
 	}
 
 	public ClassEntity save(ClassEntity clasz) {
-		return classDao.save(clasz);
+		return classRepository.save(clasz);
 	}
 
 	public Optional<StudentEntity> findById(Long id) {
-		return studentDao.findById(id);
+		return studentRepository.findById(id);
 	}
 
 	public Page<StudentDto> search(List<SearchCriteria> params, int page, int size) {
