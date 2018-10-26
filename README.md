@@ -6,4 +6,4 @@ komponen yang sudah diimplementasi :
 
 1. jpa dengan mysql
 2. swagger
-3. dynamic api rest (semi odata :D)
+3. dynamic api rest
