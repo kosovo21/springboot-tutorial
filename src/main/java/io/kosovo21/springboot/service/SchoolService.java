@@ -25,6 +25,7 @@ import io.kosovo21.springboot.entity.ClassEntity;
 import io.kosovo21.springboot.entity.StudentEntity;
 import io.kosovo21.springboot.repository.ClassRepository;
 import io.kosovo21.springboot.repository.StudentRepository;
+import io.kosovo21.springboot.util.CopyHelper;
 import io.kosovo21.springboot.util.SearchCriteria;
 
 @Service
@@ -40,10 +41,26 @@ public class SchoolService {
 	private EntityManager entityManager;
 
 	public StudentEntity save(StudentEntity student) {
+		if (student.getId() != null) {
+			Optional<StudentEntity> oldEntityOpt = studentRepository.findById(student.getId());
+			if (oldEntityOpt.isPresent()) {
+				StudentEntity oldEntity = oldEntityOpt.get();
+				CopyHelper.copyProperties(student, oldEntity);
+				student = oldEntity;
+			}
+		}
 		return studentRepository.save(student);
 	}
 
 	public ClassEntity save(ClassEntity clasz) {
+		if (clasz.getId() != null) {
+			Optional<ClassEntity> oldEntityOpt = classRepository.findById(clasz.getId());
+			if (oldEntityOpt.isPresent()) {
+				ClassEntity oldEntity = oldEntityOpt.get();
+				CopyHelper.copyProperties(clasz, oldEntity);
+				clasz = oldEntity;
+			}
+		}
 		return classRepository.save(clasz);
 	}
 
